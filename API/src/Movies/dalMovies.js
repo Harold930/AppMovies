@@ -19,7 +19,6 @@ module.exports = () => ({
     },
     getTopRated: async () => {
         const response = await axios.get(`${API_URL}/top_rated?api_key=${API_KEY}`);
-        console.log(response.data.results.length)
         return response;
     }
 });

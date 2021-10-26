@@ -38,7 +38,7 @@ const servicioMovies = {
 
         return data;
     },
-    getPopular: async () => {
+    getTopRated: async () => {
         const response = await dalMovies.getTopRated();
         const data = [];
 

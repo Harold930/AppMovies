@@ -32,8 +32,8 @@ router.get('/movies/popular', async (req,res) => {
 
 router.get('/movies/top-rated', async (req,res) => {
     try {
-        const popularMovies = await servicioMovies.getPopular();
-        res.json(popularMovies);
+        const topRated = await servicioMovies.getTopRated();
+        res.json(topRated);
     } catch (error) {
         res.status(404);
     }
