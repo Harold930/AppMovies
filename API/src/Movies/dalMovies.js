@@ -6,16 +6,19 @@ const API_URL = 'https://api.themoviedb.org/3/movie'
 module.exports = () => ({
 
     getLastestMovies: async () => {
-        const response = await axios.get(`${API_URL}/now_playing?api_key=${API_KEY}`);
-        // console.log(response,'--<<<-<-<-<-<-<-<-<-')
+        const response = await axios.get(`${API_URL}/now_playing?api_key=${API_KEY}&page=3`);
         return response;
-    }
-    ,
+    },
     getDetail: async (id) => {
         const response = await axios.get(`${API_URL}/${id}?api_key=${API_KEY}`);
-        // console.log(response,'<<<----soy detalle de la pelicula obtenido por ID');
+        return response;
+    },
+    getPopular: async () => {
+        const response = await axios.get(`${API_URL}/popular?api_key=${API_KEY}`);
+        return response;
+    },
+    getTopRated: async () => {
+        const response = await axios.get(`${API_URL}/top_rated?api_key=${API_KEY}`);
         return response;
     }
-    ,
-
 });
