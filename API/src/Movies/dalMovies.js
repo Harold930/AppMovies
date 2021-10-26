@@ -6,7 +6,7 @@ const API_URL = 'https://api.themoviedb.org/3/movie'
 module.exports = () => ({
 
     getLastestMovies: async () => {
-        const response = await axios.get(`${API_URL}/now_playing?api_key=${API_KEY}&page=3`);
+        const response = await axios.get(`${API_URL}/now_playing?api_key=${API_KEY}`);
         return response;
     },
     getDetail: async (id) => {
@@ -19,6 +19,7 @@ module.exports = () => ({
     },
     getTopRated: async () => {
         const response = await axios.get(`${API_URL}/top_rated?api_key=${API_KEY}`);
+        console.log(response.data.results.length)
         return response;
     }
 });

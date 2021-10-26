@@ -39,6 +39,17 @@ router.get('/movies/top-rated', async (req,res) => {
     }
 });
 
+router.get('/movies', async (req,res) => {
+    const name = req.query.name;
+    console.log(name);
+    try {
+        const moviesByName = await servicioMovies.getMoviesByName(name);
+        res.json(moviesByName);
+    } catch (error) {
+        res.status(404);
+    }
+});
+
 
 
 module.exports = router;

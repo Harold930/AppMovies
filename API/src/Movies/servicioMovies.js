@@ -52,9 +52,21 @@ const servicioMovies = {
     },
     getMoviesByName: async (name) => {
         const response = await dalMovies.getLastestMovies();
+        const data = [];
 
+        response.data.results.forEach( movie => {
+            let title = movie.original_title.toLowerCase();
+            console.log(title);
+            if(title.includes(name.toLowerCase())){
+                data.push({
+                    poster: movie.poster_path
+                });
+            }
+        })
         
-
+        if(data.length === 0) return {msg: 'No hay resultados'};
+        
+        return data;
     }
 }
 
