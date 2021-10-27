@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { getDetail } from '../../Redux/actions';
+import detail from './detail.module.css';
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
-// import detail from './detail.module.css';
 
 export default function Detail({match}){
     console.log(match.params.id);
@@ -19,7 +19,8 @@ export default function Detail({match}){
     },[dispatch]);
   
     return(
-        <div>
+        <div className={detail.contain}>
+         <div className={detail.detail}> 
             <h2>{movieById.name}</h2>
             <img src={`${BASE_URL}/${movieById.poster}`}  width="250" height="250" alt="Dont found" />
                <div >
@@ -28,6 +29,7 @@ export default function Detail({match}){
                 ))}
             </div> 
             <p>{movieById.summary}</p>
+         </div>
         </div>
     )
 }

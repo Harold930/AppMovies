@@ -29,37 +29,59 @@ export default function Home(){
     }
 
     if(Array.isArray(movies)){
-    return (
-        <div>
-            <div className={home.contain}>
-                <div>
-                <button onClick={handleClick} name='popular' >PELÍCULAS MÁS POPULARES</button>
+        if(movies.length <= 4){
+            return (
+            <div className={home.contain1}>
+                <div className={home.contain}>
+                    <div>
+                    <button onClick={handleClick} name='popular' >PELÍCULAS MÁS RECIENTES</button>
+                    </div>
+                    <div>
+                    <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
+                    </div>
+                    <div>
+                    <button onClick={handleClick} name='reset'>PELÍCULAS MÁS POPULARES</button>
+                    </div>
                 </div>
-                <div>
-                <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
-                </div>
-                <div>
-                <button onClick={handleClick} name='reset'>PELÍCULAS MÁS RECIENTES</button>
-                </div>
-            </div>
             <CardsMovies movies={movies}/>
         </div>
-    )
+            )
+        }else{
+            return (
+                <div>
+                    <div className={home.contain}>
+                        <div>
+                        <button onClick={handleClick} name='popular' >PELÍCULAS MÁS RECIENTES</button>
+                        </div>
+                        <div>
+                        <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
+                        </div>
+                        <div>
+                        <button onClick={handleClick} name='reset'>PELÍCULAS MÁS POPULARES</button>
+                        </div>
+                    </div>
+                    <CardsMovies movies={movies}/>
+                </div>
+            )
+        }
     } else {
         return(
-            <div>
-               {movies.msg}
-               <div>
-               <button onClick={handleClick} name='popular' >PELÍCULAS MÁS POPULARES</button>
-           </div>
-           <div>
-               <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
-           </div>
-           <div>
-               <button onClick={handleClick} name='reset'>PELÍCULAS MÁS RECIENTES</button>
-           </div>
+          <div className={home.contain1}>
+            <div className={home.contain}>
+                <div>
+                    <button onClick={handleClick} name='popular' >PELÍCULAS MÁS POPULARES</button>
+                </div>
+                <div>
+                    <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
+                </div>
+                <div>
+                    <button onClick={handleClick} name='reset'>PELÍCULAS MÁS RECIENTES</button>
+                </div>
             </div>
+            <h1 className={home.font}>{movies.msg}</h1>
+          </div>
         )
     }
 }
+
 
