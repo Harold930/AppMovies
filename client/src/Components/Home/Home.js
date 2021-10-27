@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLastestMovies, getPopular, getTopRated } from '../../Redux/actions.js';
 import CardsMovies from '../CardsMovies/CardsMovies.js';
+import home from './home.module.css';
 
 export default function Home(){
     
@@ -27,26 +28,36 @@ export default function Home(){
         }
     }
 
-    if(movies.length !== 0){
+    if(Array.isArray(movies)){
     return (
         <div>
-            <h2> PELICULAS </h2>
-            <div>
-               <button onClick={handleClick} name='popular' >PELICULAS MAS POPULARES</button>
-           </div>
-           <div>
-               <button onClick={handleClick} name='top-rated'>PELICULAS MEJOR CALIFICADAS</button>
-           </div>
-           <div>
-               <button onClick={handleClick} name='reset'>REINICIAR</button>
-           </div>
+            <div className={home.contain}>
+                <div>
+                <button onClick={handleClick} name='popular' >PELÍCULAS MÁS POPULARES</button>
+                </div>
+                <div>
+                <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
+                </div>
+                <div>
+                <button onClick={handleClick} name='reset'>PELÍCULAS MÁS RECIENTES</button>
+                </div>
+            </div>
             <CardsMovies movies={movies}/>
         </div>
     )
     } else {
         return(
             <div>
-                NO SE ENCONTRARON RESULTADOS
+               {movies.msg}
+               <div>
+               <button onClick={handleClick} name='popular' >PELÍCULAS MÁS POPULARES</button>
+           </div>
+           <div>
+               <button onClick={handleClick} name='top-rated'>PELÍCULAS MEJOR CALIFICADAS</button>
+           </div>
+           <div>
+               <button onClick={handleClick} name='reset'>PELÍCULAS MÁS RECIENTES</button>
+           </div>
             </div>
         )
     }

@@ -1,0 +1,23 @@
+
+.filterSort{
+    display: flex;
+    justify-content: space-around;
+}
+.input select {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.input option{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.contain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cursor{
+    cursor: pointer;
+}

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getMoviesByName } from '../../Redux/actions';
-// import nav from './nav.module.css';
+import nav from './nav.module.css';
 import icono from '../../img/lupa.webp';
 
 export default function Nav(){
@@ -28,13 +28,15 @@ export default function Nav(){
     }
 
     return(
-        <nav>
+        <nav className={nav.nav}>
            <NavLink to = '/'  style={{ textDecoration: 'none' }}>
-                <h1>HOME</h1>
+                <h1 className={nav.font}>HOME</h1>
            </NavLink>
+           <h1 className={nav.font}>PELÍCULAS</h1>
+
            <div>
-                <button onClick={handleCLick} ></button>
-                <input type="text" placeholder='Buscar por nombre' value={name}  onChange={handleChange} onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)} />
+                <button onClick={handleCLick} ><img src={icono} className={nav.button}/></button>
+                <input className = {nav.input}type="text" placeholder='Buscar por nombre' value={name}  onChange={handleChange} onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)} />
            </div>
         </nav>
     )

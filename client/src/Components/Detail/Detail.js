@@ -19,8 +19,7 @@ export default function Detail({match}){
     },[dispatch]);
   
     return(
-        <div >
-            SISARRONESSSSS
+        <div>
             <h2>{movieById.name}</h2>
             <img src={`${BASE_URL}/${movieById.poster}`}  width="250" height="250" alt="Dont found" />
                <div >

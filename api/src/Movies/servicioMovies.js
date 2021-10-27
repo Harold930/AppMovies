@@ -33,7 +33,8 @@ const servicioMovies = {
 
          response.data.results.forEach(movie => {
              data.push({
-                 poster: movie.poster_path
+                 poster: movie.poster_path,
+                 id: movie.id
              });
          });
 
@@ -45,7 +46,8 @@ const servicioMovies = {
 
          response.data.results.forEach(movie => {
              data.push({
-                 poster: movie.poster_path
+                 poster: movie.poster_path,
+                 id: movie.id
              });
          });
 
@@ -59,7 +61,8 @@ const servicioMovies = {
             let title = movie.original_title.toLowerCase();
             if(title.includes(name.toLowerCase())){
                 data.push({
-                    poster: movie.poster_path
+                    poster: movie.poster_path,
+                    id: movie.id
                 });
             }
         })
