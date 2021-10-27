@@ -9,8 +9,8 @@ import Detail from './Components/Detail/Detail';
 function App() {
   return (
     <div>
-          {/* <Route path = '/' component = {Nav}/> */}
           <div className='App'>
+          <Route path = '/' component = {Nav}/>
             <Route exact path = '/' component = {Home}/>
             <Route  path = '/detail/:id' component = {Detail}/>
           </div>

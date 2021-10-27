@@ -22,3 +22,36 @@ export function getDetail(id){
         });
     }
 }
+
+export function getPopular(){
+    return async function(dispatch){
+        let response = await axios.get(`http://localhost:3001/movies/popular`, {responseType:'json'});
+        console.log(response)
+        return dispatch({
+            type: 'GET_POPULAR_MOVIES',
+            payload: response.data
+        });
+    }
+}
+
+export function getTopRated(){
+    return async function(dispatch){
+        let response = await axios.get(`http://localhost:3001/movies/top-rated`, {responseType:'json'});
+        console.log(response)
+        return dispatch({
+            type: 'GET_TOP_RATED',
+            payload: response.data
+        });
+    }
+}
+
+export function getMoviesByName(name){
+    return async function(dispatch){
+        let response = await axios.get(`http://localhost:3001/movies?name=${name}`, {responseType:'json'});
+        console.log(response)
+        return dispatch({
+            type: 'GET_MOVIES_BY_NAME',
+            payload: response.data
+        });
+    }
+}

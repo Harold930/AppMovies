@@ -15,6 +15,21 @@ function rootReducer(state = intialState, action){
                 ...state,
                 movieById: action.payload
             }
+        case 'GET_POPULAR_MOVIES':
+            return {
+                ...state,
+                movies: action.payload
+            }
+        case 'GET_TOP_RATED':
+            return {
+                ...state,
+                movies: action.payload
+            }
+        case 'GET_MOVIES_BY_NAME':
+            return {
+                ...state,
+                movies: action.payload
+            }
         default: return state
     }
 }
