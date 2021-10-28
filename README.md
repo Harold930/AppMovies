@@ -19,5 +19,7 @@ Y ya con eso podemos ejecutar la APP  en nuestro equipo.
 
 En caso de no abrir automaticamente el localhost -->> http://localhost:3000/
 
+Intenté subir el proyecto al servidor, adjunto el link. (NO TODAS LAS FUNCIONALIDADES). https://deploy-front.vercel.app/
+
 Gracias por revisar mi prueba. 
 
