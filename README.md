@@ -17,4 +17,7 @@ Ejecutar los comandos anteriores de manera separada, primero en el directorio ap
 
 Y ya con eso podemos ejecutar la APP  en nuestro equipo. 
 
+En caso de no abrir automaticamente el localhost -->> http://localhost:3000/
+
 Gracias por revisar mi prueba. 
+
